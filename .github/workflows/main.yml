@@ -27,6 +27,12 @@ jobs:
         run: cd frontend && npm install
       - name: Build frontend
         run: cd frontend && npm run build
+      - name: Check baked API URL
+        run: |
+          echo "VITE_API_URL at build: $VITE_API_URL"
+          echo "---- search in dist (built files) ----"
+          grep -R "tp5-d-ploiement-fullstack-production.up.railway.app" -n frontend/dist || true
+          grep -R "http://" -n frontend/dist || true
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL}}
       - name: Deploy to Netlify
