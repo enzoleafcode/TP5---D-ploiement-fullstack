@@ -7,7 +7,6 @@ on:
 jobs:
   backend:
     name: backend
-    deploy:
     runs-on: ubuntu-latest
     container: ghcr.io/railwayapp/cli:latest
     env:
