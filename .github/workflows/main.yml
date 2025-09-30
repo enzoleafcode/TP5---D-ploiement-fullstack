@@ -6,6 +6,7 @@ on:
 
 jobs:
   backend:
+    name: backend
     deploy:
     runs-on: ubuntu-latest
     container: ghcr.io/railwayapp/cli:latest
@@ -16,6 +17,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: railway up --service=${{ env.SVC_ID }}
   frontend:
+    name: frontend
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
