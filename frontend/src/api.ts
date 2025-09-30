@@ -21,7 +21,8 @@ export interface UpdateTaskRequest {
   description?: string;
 }
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL;
+// const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";//remplacé//
 
 // Fonction pour récupérer toutes les tâches
 export const getTasks = async (): Promise<Task[]> => {
